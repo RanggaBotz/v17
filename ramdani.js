@@ -85,8 +85,7 @@ const fake = JSON.parse(fs.readFileSync('./config/fake.json'))
 namasession = setting.NamaSession
 namaowner = setting.NamaOwner
 nomorowner = setting.NomorOwner
-nomorowner2 = setting.NomorOwner2
-namabot = setting.NamaBot
+namabot = setting.Ranggabotz
 nomorbot = setting.NomorBot
 banchats = setting.BanChats
 autoread = setting.AutoRead
@@ -460,7 +459,7 @@ sendEphemeral: false,
        const kickMember = async(id, target = []) => {
            let group = await Ramdani.groupMetadata(id)
            let owner = group.owner.replace("c.us", "s.whatsapp.net")
-           let me = Ramdani.user.jid
+           let me = Rangga.user.jid
            for (i of target) {
            if (!i.includes(me) && !i.includes(owner)) {
            await Ramdani.groupRemove(to, [i])
@@ -1185,11 +1184,10 @@ break
 ❏ STATUS : *${isOwner ? 'Owner' : isPremium ? 'Premium' : 'Free use'}*
 ❏ LIMIT : *${isPremium ? 'Unlimited' : `${limit}`}*
 
-━━━━━ *INFO BOT* ━━━━━
-❏ NAMA : *${namabot}*
-❏ API : *wa.me/${botNumber}*
-❏ OWNER : *${namaowner}*
-❏ API : *wa.me/${nomorowner}*
+━━━━━ *INFO BOT* ━━━
+❏ NAMABOT: RanggaBotz
+❏ API : *wa.me/6285722146020
+❏ OWNER : RanggaGanteng
 ❏ AKTIF : *${runtime(process.uptime())}*
 ❏ BATERAI : *${baterai}*
 ❏ PREFIX : *『> multi prefix <』*
@@ -2139,7 +2137,7 @@ break
          if (!isRegist) return freply(mess.regist)
          if (isBanned) return freply(mess.banned)
              freply(`*PULSA :* ${pulsa}`)
-             break    
+             break   
 // SOSMET          
       case 'infoig':
       if (!isRegist) return freply(mess.regist)
@@ -6381,10 +6379,10 @@ case 'quotesdilan':
 					if (!isBotGroupAdmins) return freply(ind.badmin())
 					if (args[0] === 'buka') {
 					    freply(`*BERHASIL MEMBUKA GROUP*`)
-						Ramdani.groupSettingChange(from, GroupSettingChange.messageSend, false)
+						Rangga.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'tutup') {
 						freply(`*BERHASIL MENUTUP GROUP*`)
-						Ramdani.groupSettingChange(from, GroupSettingChange.messageSend, true)
+						Rangga.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break   
 //--------------<soundnya vang:v>-----------------
@@ -6903,14 +6901,14 @@ Giliran = @${tty.player1.split('@')[0]}
    ${angka[1]}${angka[2]}${angka[3]}
    ${angka[4]}${angka[5]}${angka[6]}
    ${angka[7]}${angka[8]}${angka[9]}`
-  Ramdani.sendMessage(from, ucapan, text, {quoted: troli, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
+  Rangga.sendMessage(from, ucapan, text, {quoted: troli, contextInfo:{mentionedJid: [tty.player1,tty.player2]}})
   }
 if (budy.startsWith('N')){
 tto = ky_ttt.filter(ghg => ghg.id.includes(from))
 tty = tto[0]
 naa = ky_ttt.filter(toek => !toek.id.includes(from)) 
 ky_ttt = naa
-Ramdani.sendMessage(from, `Yahh @${tty.player2.split('@')[0]} Menolak:(`,text,{quoted:troli,contextInfo:{mentionedJid:[tty.player2]}})
+Rangga.sendMessage(from, `Yahh @${tty.player2.split('@')[0]} Menolak:(`,text,{quoted:troli,contextInfo:{mentionedJid:[tty.player2]}})
 }
 }
 
